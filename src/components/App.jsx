@@ -25,14 +25,14 @@ export class App extends Component {
     console.log('App did update');
 
     if (
-      this.state.name !== prevState.name ||
-      this.state.number !== prevState.number ||
+      // this.state.name !== prevState.name ||
+      // this.state.number !== prevState.number ||
       this.state.contacts !== prevState.contacts
     ) {
       console.log('NEW!!!');
 
-      localStorage.setItem('name', JSON.stringify(this.state.name));
-      localStorage.setItem('number', JSON.stringify(this.state.number));
+      // localStorage.setItem('name', JSON.stringify(this.state.name));
+      // localStorage.setItem('number', JSON.stringify(this.state.number));
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
