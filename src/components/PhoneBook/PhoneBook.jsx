@@ -4,28 +4,7 @@ export class ContactForm extends Component {
   state = {
     name: '',
     number: '',
-    // contacts:[],
   };
-
-//   componentDidMount() {
-//     console.log('did Mount');
-//   }
-
-//   componentDidUpdate(prevProps, prevState) {
-//     console.log('App did update');
-
-//     if (
-//       this.state.name !== prevState.name ||
-//       this.state.number !== prevState.number ||
-//       this.state.contacts !== prevState.contacts
-//     ) {
-//       console.log('NEW!!!');
-
-//       localStorage.setItem('name', JSON.stringify(this.state.name));
-//       localStorage.setItem('number', JSON.stringify(this.state.number));
-//       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-//     }
-//   }
 
   handleChange = evnt => {
     console.log(evnt.currentTarget.value);
@@ -82,3 +61,30 @@ export class ContactForm extends Component {
     );
   }
 }
+// import PropTypes from 'prop-types';
+// import style from './ContactItem.module.css';
+
+// export const ContactItem = ({ id, name, number, onDeleteContact }) => {
+//   return (
+//     <li key={id} id={id} className={style['item']}>
+//       <button
+//         onClick={() => onDeleteContact(id)}
+//         className={style['button']}
+//         type="Submit"
+//       >
+//         x
+//       </button>
+//       <div className={style['wrapper']}>
+//         <p className={style['text']}>{name}:</p>
+//         <p className={style['number']}>{number}</p>
+//       </div>
+//     </li>
+//   );
+// };
+
+// ContactItem.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   number: PropTypes.string.isRequired,
+//   onDeleteContact: PropTypes.func.isRequired,
+// };

@@ -18,24 +18,20 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    console.log('did Mount');
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('App did update');
-
-    if (
-      // this.state.name !== prevState.name ||
-      // this.state.number !== prevState.number ||
-      this.state.contacts !== prevState.contacts
-    ) {
-      console.log('NEW!!!');
-
-      // localStorage.setItem('name', JSON.stringify(this.state.name));
-      // localStorage.setItem('number', JSON.stringify(this.state.number));
+    if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
+
   handleChangeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
